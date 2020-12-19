@@ -1,0 +1,24 @@
+.about-me {
+  background-color: $cWhite;
+  position: relative;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__inner {
+    h3 {
+      font-size: 4rem;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  &__introduction {
+    margin-bottom: 60px;
+  }
+}

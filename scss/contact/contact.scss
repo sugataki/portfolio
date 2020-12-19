@@ -1,0 +1,14 @@
+@import "../modules/reset";
+@import "../modules//lib";
+@import "../modules/door";
+
+body {
+  height: 100vh;
+  width: 100%;
+  opacity: 0;
+}
+
+.title {
+  // font-size: 100px;
+  color: gray;
+}

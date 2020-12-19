@@ -1,0 +1,468 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav, ul, li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+a:visited {
+  color: inherti;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #5b5b5b;
+  line-height: 30px;
+  opacity: 0;
+  font-family: source-han-serif-japanese, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+section {
+  padding-bottom: 80px;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 120px;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 80px;
+}
+
+*.rotate {
+  animation: sk-rotate 2.4s ease-out;
+}
+
+@keyframes sk-rotate {
+  0% {
+    opacity: 0;
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(2160deg);
+  }
+}
+
+*.popUp {
+  animation: sk-popUp 0.2s ease-out;
+}
+
+@keyframes sk-popUp {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+*.blur {
+  animation: sk-blur 1s;
+}
+
+@keyframes sk-blur {
+  0% {
+    filter: blur(50px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
+.door {
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  background-image: url("../../img/fusuma.jpg");
+  position: fixed;
+  top: 0;
+  right: -100%;
+  transition: 0.5;
+  border: 14px solid #393e4f;
+}
+
+.door::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: #393e4f;
+  position: relative;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  position: absolute;
+  top: -80px;
+  left: 0;
+  color: #eef9ff;
+  background: linear-gradient(-90deg, rgba(228, 169, 114, 0.8), rgba(153, 65, 216, 0.8));
+  transition: 0.5s;
+  z-index: 100;
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.header__icon {
+  font-size: 3rem;
+}
+
+.header__container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__nav li {
+  font-size: 1.8rem;
+  margin-right: 20px;
+}
+
+.header__nav li:last-child {
+  margin-right: 0;
+}
+
+.top {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.top video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+
+.top__title {
+  color: #eef9ff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top__title p {
+  font-size: 3rem;
+}
+
+.about-me {
+  background-color: #eef9ff;
+  position: relative;
+}
+
+.about-me__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-me__inner h3 {
+  font-size: 4rem;
+  margin-bottom: 40px;
+}
+
+.about-me__inner p {
+  font-size: 2rem;
+}
+
+.about-me__introduction {
+  margin-bottom: 60px;
+}
+
+.skills {
+  width: 100%;
+  overflow: hidden;
+  background-image: url("../../img/bg-img/skills.jpg");
+  background-position: center;
+}
+
+.skills__title {
+  color: #eef9ff;
+  text-align: center;
+}
+
+.skills__list {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.skills__item {
+  text-align: center;
+  background-color: white;
+  transition: transform 1s;
+}
+
+.skills__item i {
+  font-size: 12rem;
+}
+
+.skills__item-title {
+  font-size: 3rem;
+}
+
+.skills__item-level {
+  font-size: 2rem;
+}
+
+.skills .html {
+  color: #e34f26;
+}
+
+.skills .css {
+  color: #2c7cff;
+}
+
+.skills .sass {
+  color: #ff82b2;
+}
+
+.skills .js {
+  color: #ffd700;
+}
+
+.skills .wordpress {
+  color: #2c7cff;
+}
+
+.skills .php {
+  color: #8eb8ff;
+}
+
+.skills .github {
+  color: black;
+}
+
+.service__title {
+  text-align: center;
+}
+
+.service__list .item1 {
+  margin-bottom: 80px;
+}
+
+.service__list .item1 img {
+  transform: translateY(-30px);
+}
+
+.service__list .item2 {
+  flex-direction: row-reverse;
+}
+
+.service__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service__item-imgBox {
+  width: 480px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.service__item-imgBox img {
+  width: 100%;
+}
+
+.service__item-title {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.service__item-description {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.service__item-price {
+  font-size: 1.6rem;
+}
+
+.works__title {
+  text-align: center;
+}
+
+.works__list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.works__item {
+  width: 680px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.works__item img {
+  height: 100%;
+}
+
+.works__item a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.works__item p {
+  color: #eef9ff;
+  font-size: 2rem;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.works__item:hover p {
+  bottom: 0%;
+  opacity: 1;
+}
+
+.contact {
+  height: 100vh;
+}
+/*# sourceMappingURL=main.css.map */

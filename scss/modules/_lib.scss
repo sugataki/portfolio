@@ -1,0 +1,52 @@
+$cWhite: #eef9ff;
+$cBlue: #b4daed;
+$cBlack: #5b5b5b;
+$cPink: #fc9d9d;
+
+// @import url("https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap");
+
+@mixin pc {
+  @media screen and (min-width: 960px) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (max-width: 959px) {
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: $cBlack;
+  line-height: 30px;
+  opacity: 0;
+  // font-family: "Sawarabi Mincho", sans-serif;
+  font-family: source-han-serif-japanese, serif;
+  font-weight: 400;
+
+  font-style: normal;
+}
+
+section {
+  padding-bottom: 80px;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 120px;
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 80px;
+}

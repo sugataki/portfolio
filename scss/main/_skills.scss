@@ -1,0 +1,64 @@
+.skills {
+  width: 100%;
+  overflow: hidden;
+  background-image: url("../../img/bg-img/skills.jpg");
+  background-position: center;
+
+  &__title {
+    color: $cWhite;
+    text-align: center;
+  }
+
+  &__list {
+    background-color: rgba(black, 0.5);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__item {
+    text-align: center;
+    background-color: white;
+    transition: transform 1s;
+
+    i {
+      font-size: 12rem;
+    }
+
+    &-title {
+      font-size: 3rem;
+    }
+
+    &-level {
+      font-size: 2rem;
+    }
+  }
+
+  .html {
+    color: #e34f26;
+  }
+
+  .css {
+    color: #2c7cff;
+  }
+
+  .sass {
+    color: #ff82b2;
+  }
+
+  .js {
+    color: #ffd700;
+  }
+
+  .wordpress {
+    color: #2c7cff;
+  }
+
+  .php {
+    color: #8eb8ff;
+  }
+
+  .github {
+    color: black;
+  }
+}

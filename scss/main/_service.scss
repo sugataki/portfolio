@@ -1,0 +1,48 @@
+.service {
+  &__title {
+    text-align: center;
+  }
+
+  &__list {
+    .item1 {
+      margin-bottom: 80px;
+
+      img {
+        transform: translateY(-30px);
+      }
+    }
+
+    .item2 {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+    &-imgBox {
+      width: 480px;
+      height: 240px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-title {
+      font-size: 3rem;
+      margin-bottom: 40px;
+    }
+
+    &-description {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    &-price {
+      font-size: 1.6rem;
+    }
+  }
+}

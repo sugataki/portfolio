@@ -1,12 +1,14 @@
 import {
   switchLoad,
   toLinkPageWithDoor,
-  slideDoorToNextPage,
+  slideDoorToShowPage,
+  scrollToPosition,
+  Animation,
 } from "./modules/index.js";
 
 $(function () {
   switchLoad();
-  slideDoorToNextPage();
+  slideDoorToShowPage();
 });
 
 $(window).on("load", function () {
@@ -104,66 +106,25 @@ $(window).on("load", function () {
     });
   });
 
+  $(".scroll-top").click(() => {
+    scrollToPosition("#top");
+  });
+
+  $(".about-me-link").click(() => {
+    scrollToPosition("#about-me");
+  });
+
+  $(".skills-link").click(() => {
+    scrollToPosition("#skills");
+  });
+
+  $(".service-link").click(() => {
+    scrollToPosition("#service");
+  });
+
+  $(".works-link").click(() => {
+    scrollToPosition("#works");
+  });
+
   toLinkPageWithDoor();
 });
-
-class Animation {
-  constructor(query, type) {
-    this.query = $(query);
-    this.type = type;
-
-    const $query = this.query;
-
-    const opacity0 = () => $query.css({ opacity: 0 });
-
-    switch (this.type) {
-      case "fadeIn":
-        opacity0();
-        $query.css({ position: "relative", top: "20px" });
-        break;
-      case "rotate":
-        opacity0();
-        break;
-      case "popUp":
-        opacity0();
-        break;
-      case "blur":
-        opacity0();
-        break;
-    }
-  }
-
-  show(delaySeconds = 0) {
-    const $query = this.query;
-
-    const opacity1 = () => $query.css({ opacity: 1 });
-    setTimeout(() => {
-      switch (this.type) {
-        case "fadeIn":
-          $query.animate({ opacity: 1, top: 0 }, 800);
-          break;
-        case "rotate":
-          $query.animate({ opacity: 1 }, 800).addClass("rotate");
-          break;
-        case "popUp":
-          opacity1();
-          $query.addClass("popUp");
-          break;
-        case "blur":
-          opacity1();
-          $query.addClass("blur");
-          break;
-      }
-    }, delaySeconds);
-  }
-
-  _getScrollTop() {
-    return this.query.offset().top;
-  }
-
-  hasOverTaken(comparisonPosition) {
-    return (
-      comparisonPosition >= this._getScrollTop() - ($(window).height() / 3) * 2
-    );
-  }
-}

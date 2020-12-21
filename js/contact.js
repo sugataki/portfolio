@@ -1,15 +1,17 @@
 import {
   toLinkPageWithDoor,
   switchLoad,
-  slideDoorToNextPage,
+  slideDoorToShowPage,
 } from "./modules/index.js";
 
 $(function () {
   switchLoad();
-  slideDoorToNextPage();
+  slideDoorToShowPage();
   toLinkPageWithDoor();
 });
 
 $(window).on("load", function () {
   $("body").css({ opacity: 1 });
+
+  toLinkPageWithDoor();
 });

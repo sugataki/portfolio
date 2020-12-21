@@ -138,11 +138,15 @@ section {
   margin-bottom: 80px;
 }
 
+.link-btn {
+  cursor: pointer;
+}
+
 .door {
   width: 100%;
   height: 100vh;
   z-index: 1000;
-  background-image: url("../../img/fusuma.jpg");
+  background-image: url("../img/fusuma.jpg");
   position: fixed;
   top: 0;
   right: -100%;
@@ -163,13 +167,167 @@ section {
   border-radius: 50%;
 }
 
+.header {
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  color: #eef9ff;
+  background: linear-gradient(-90deg, rgba(228, 169, 114, 0.8), rgba(153, 65, 216, 0.8));
+  z-index: 100;
+}
+
+.header.main-header {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  transition: 0.5s;
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.header__icon {
+  font-size: 3rem;
+}
+
+.header__container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__nav li {
+  font-size: 1.8rem;
+  margin-right: 20px;
+}
+
+.header__nav li:last-child {
+  margin-right: 0;
+}
+
+.header__nav li .contact-link-btn {
+  color: #ec811c;
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  border-radius: 2rem;
+  background-color: #eef9ff;
+}
+
+.header__nav li .contact-link-btn i {
+  margin-right: 4px;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+footer small {
+  font-size: 1.2rem;
+}
+
 body {
-  height: 100vh;
   width: 100%;
   opacity: 0;
 }
 
+.fa-chevron-left {
+  color: #eef9ff;
+  margin-right: 8px;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 2rem;
+  color: #eef9ff;
+  background-color: #5b5b5b;
+  border-radius: 50px;
+  margin-bottom: 80px;
+}
+
 .title {
   color: gray;
+}
+
+/* Contact Form7 */
+.contact7 {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.contact7__flex {
+  display: flex;
+}
+
+.contact7__left {
+  flex: 1;
+}
+
+.contact7__right {
+  flex: 2;
+}
+
+.contact7 p {
+  font-size: 2rem;
+}
+
+.contact7 textarea {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+}
+
+.contact7 input {
+  height: 3.6rem;
+  margin-bottom: 20px;
+}
+
+.contact7 .must {
+  background: #ff1a00;
+}
+
+.contact7 .optional {
+  background: #999;
+}
+
+.contact7 .must,
+.contact7 .optional {
+  color: #fff;
+  border-radius: 3px;
+  font-size: 10px;
+  margin-left: 10px;
+  padding: 5px 10px;
+  letter-spacing: 2px;
+}
+
+.contact7 .btn_contact7 input {
+  display: block;
+  width: 30%;
+  background-color: #005513;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: #eef9ff;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  border: 1px solid #005513;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.contact7 .btn_contact7 input:hover {
+  background-color: #fff;
+  color: #005513;
 }
 /*# sourceMappingURL=contact.css.map */

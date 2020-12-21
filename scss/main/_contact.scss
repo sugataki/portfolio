@@ -1,3 +1,23 @@
 .contact {
-  height: 100vh;
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__btn {
+    display: inline-block;
+    font-size: 2.4rem;
+    padding: 20px 60px;
+    color: $cWhite;
+    background: linear-gradient(60deg, #f98080 0%, #f58888 26%, #f09090 100%);
+    border-radius: 3.9rem;
+    transition: 0.2s;
+
+    i {
+      margin-right: 8px;
+    }
+
+    &:hover {
+      transform: scale(0.95);
+    }
+  }
 }

@@ -1,12 +1,13 @@
 .skills {
   width: 100%;
   overflow: hidden;
-  background-image: url("../../img/bg-img/skills.jpg");
+  background-image: url("../img/bg-img/skills.jpg");
   background-position: center;
 
   &__title {
     color: $cWhite;
     text-align: center;
+    text-shadow: 1px 0 5px $cBlack;
   }
 
   &__list {
@@ -20,6 +21,7 @@
     text-align: center;
     background-color: white;
     transition: transform 1s;
+    border-radius: 0.3rem;
 
     i {
       font-size: 12rem;

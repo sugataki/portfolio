@@ -138,6 +138,10 @@ section {
   margin-bottom: 80px;
 }
 
+.link-btn {
+  cursor: pointer;
+}
+
 *.rotate {
   animation: sk-rotate 2.4s ease-out;
 }
@@ -182,7 +186,7 @@ section {
   width: 100%;
   height: 100vh;
   z-index: 1000;
-  background-image: url("../../img/fusuma.jpg");
+  background-image: url("../img/fusuma.jpg");
   position: fixed;
   top: 0;
   right: -100%;
@@ -207,13 +211,16 @@ section {
   width: 100%;
   height: 80px;
   margin: 0 auto;
+  color: #eef9ff;
+  background: linear-gradient(-90deg, rgba(228, 169, 114, 0.8), rgba(153, 65, 216, 0.8));
+  z-index: 100;
+}
+
+.header.main-header {
   position: absolute;
   top: -80px;
   left: 0;
-  color: #eef9ff;
-  background: linear-gradient(-90deg, rgba(228, 169, 114, 0.8), rgba(153, 65, 216, 0.8));
   transition: 0.5s;
-  z-index: 100;
 }
 
 .header.fixed {
@@ -246,6 +253,18 @@ section {
 
 .header__nav li:last-child {
   margin-right: 0;
+}
+
+.header__nav li .contact-link-btn {
+  color: #ec811c;
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  border-radius: 2rem;
+  background-color: #eef9ff;
+}
+
+.header__nav li .contact-link-btn i {
+  margin-right: 4px;
 }
 
 .top {
@@ -305,13 +324,14 @@ section {
 .skills {
   width: 100%;
   overflow: hidden;
-  background-image: url("../../img/bg-img/skills.jpg");
+  background-image: url("../img/bg-img/skills.jpg");
   background-position: center;
 }
 
 .skills__title {
   color: #eef9ff;
   text-align: center;
+  text-shadow: 1px 0 5px #5b5b5b;
 }
 
 .skills__list {
@@ -325,6 +345,7 @@ section {
   text-align: center;
   background-color: white;
   transition: transform 1s;
+  border-radius: 0.3rem;
 }
 
 .skills__item i {
@@ -412,6 +433,10 @@ section {
   font-size: 1.6rem;
 }
 
+.works {
+  background-color: #eef9ff;
+}
+
 .works__title {
   text-align: center;
 }
@@ -462,7 +487,34 @@ section {
   opacity: 1;
 }
 
-.contact {
-  height: 100vh;
+.contact__wrapper {
+  text-align: center;
+}
+
+.contact__btn {
+  display: inline-block;
+  font-size: 2.4rem;
+  padding: 20px 60px;
+  color: #eef9ff;
+  background: linear-gradient(60deg, #f98080 0%, #f58888 26%, #f09090 100%);
+  border-radius: 3.9rem;
+  transition: 0.2s;
+}
+
+.contact__btn i {
+  margin-right: 8px;
+}
+
+.contact__btn:hover {
+  transform: scale(0.95);
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+footer small {
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=main.css.map */

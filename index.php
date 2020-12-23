@@ -165,7 +165,7 @@
           <p class="title works__title">作品</p>
           <div class="works__list">
             <div class="works__item">
-              <a href="">
+              <a class="anchor-link" href="<?php echo home_url("/honny-bee-introduction"); ?>">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/works-img/honny-bee.JPG" alt="" />
                 <p>
                   【カテゴリー】オリジナルサイト<br />

@@ -2,26 +2,12 @@
 @import "../modules//lib";
 @import "../modules/door";
 @import "../modules/header";
+@import "../modules/back-btn";
 @import "../modules/footer";
 
 body {
   width: 100%;
   opacity: 0;
-}
-
-.fa-chevron-left {
-  color: $cWhite;
-  margin-right: 8px;
-}
-
-.back-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 2rem;
-  color: $cWhite;
-  background-color: $cBlack;
-  border-radius: 50px;
-  margin-bottom: 80px;
 }
 
 .title {

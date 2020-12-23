@@ -17,9 +17,11 @@
 
   <div class="wrapper">
 
-    <a class="anchor-link link-btn back-btn" href="<?php echo home_url("/"); ?>"><i class="fas fa-chevron-left"></i>戻る</a>
-    <h1 class="title"><?php the_title(); ?></h1>
-    <?php the_content(); ?>
+    <?php while (have_posts()) : the_post(); ?>
+      <h1 class="title"><?php the_title(); ?></h1>
+      <?php the_content(); ?>
+      <a class="anchor-link link-btn back-btn" href="<?php echo home_url("/"); ?>"><i class="fas fa-chevron-left"></i>戻る</a>
+    <?php endwhile ?>
   </div>
 
   <footer>

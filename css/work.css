@@ -262,82 +262,27 @@ footer small {
 }
 
 body {
-  width: 100%;
-  opacity: 0;
+  text-align: center;
 }
 
-.title {
-  color: gray;
+.img {
+  margin-bottom: 40px;
 }
 
-/* Contact Form7 */
-.contact7 {
-  max-width: 100%;
-  box-sizing: border-box;
+dl {
+  margin-bottom: 40px;
 }
 
-.contact7__flex {
-  display: flex;
-}
-
-.contact7__left {
-  flex: 1;
-}
-
-.contact7__right {
-  flex: 2;
-}
-
-.contact7 p {
-  font-size: 2rem;
-}
-
-.contact7 textarea {
-  box-sizing: border-box;
-  width: 100%;
-  resize: vertical;
-}
-
-.contact7 input {
-  height: 3.6rem;
+dl dt {
+  font-size: 3rem;
   margin-bottom: 20px;
 }
 
-.contact7 .must {
-  background: #ff1a00;
+dl dd {
+  font-size: 3rem;
 }
 
-.contact7 .optional {
-  background: #999;
+.custom_field {
+  margin-bottom: 80px;
 }
-
-.contact7 .must,
-.contact7 .optional {
-  color: #fff;
-  border-radius: 3px;
-  font-size: 10px;
-  margin-left: 10px;
-  padding: 5px 10px;
-  letter-spacing: 2px;
-}
-
-.contact7 .btn_contact7 input {
-  display: block;
-  width: 30%;
-  background-color: #005513;
-  border-radius: 5px;
-  margin: 0 auto;
-  color: #eef9ff;
-  font-size: 1.1em;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  border: 1px solid #005513;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.contact7 .btn_contact7 input:hover {
-  background-color: #fff;
-  color: #005513;
-}
-/*# sourceMappingURL=contact.css.map */
+/*# sourceMappingURL=work.css.map */

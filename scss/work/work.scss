@@ -1,0 +1,29 @@
+@import "../modules/reset";
+@import "../modules/lib";
+@import "../modules/door";
+@import "../modules/header";
+@import "../modules/back-btn";
+@import "../modules/footer";
+
+body {
+  text-align: center;
+}
+
+.img {
+  margin-bottom: 40px;
+}
+
+dl {
+  margin-bottom: 40px;
+  dt {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  dd {
+    font-size: 3rem;
+  }
+}
+
+.custom_field {
+  margin-bottom: 80px;
+}

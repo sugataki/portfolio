@@ -20,7 +20,7 @@
     <?php while (have_posts()) : the_post(); ?>
       <div class="container"><?php the_content(); ?>
 
-        <div class="img"><?php the_post_thumbnail("large"); ?></div>
+        <div class="img-box"><?php the_post_thumbnail("large"); ?></div>
 
         <div class="custom_field">
           <dl>
@@ -37,11 +37,16 @@
           </dl>
           <dl>
             <dt>【詳細】</dt>
-            <dd><?php the_field("詳細"); ?></dd>
+            <dd class="detail-text"><?php the_field("詳細"); ?></dd>
           </dl>
         </div>
 
-        <a class="anchor-link link-btn back-btn" href="<?php echo home_url("/"); ?>"><i class="fas fa-chevron-left"></i>戻る</a>
+        <div class="inner">
+
+          <a class="link-btn site-link-btn" href="<?php the_field("リンク先") ?>" target="_blank" rel="noopener noreferrer">サイトを閲覧する<i class="fas fa-chevron-right"></i></a>
+          <a class="anchor-link link-btn back-btn" href="<?php echo home_url("/"); ?>"><i class="fas fa-chevron-left"></i>戻る</a>
+        </div>
+
       </div>
     <?php endwhile ?>
   </div>

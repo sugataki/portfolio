@@ -70,14 +70,14 @@ body {
   .btn_contact7 input {
     display: block;
     width: 30%;
-    background-color: #005513;
+    background-color: $cGreen;
     border-radius: 5px;
     margin: 0 auto;
     color: $cWhite;
     font-size: 1.1em;
     font-weight: bold;
     letter-spacing: 0.2em;
-    border: 1px solid #005513;
+    border: 1px solid $cGreen;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
@@ -87,7 +87,7 @@ body {
 
     &:hover {
       background-color: #fff;
-      color: #005513;
+      color: $cGreen;
     }
   }
 }

@@ -164,17 +164,36 @@
         <div class="wrapper">
           <p class="title works__title">作品</p>
           <div class="works__list">
-            <div class="works__item">
-              <a class="anchor-link" href="<?php echo home_url("/honny-bee-introduction"); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/works-img/honny-bee.JPG" alt="" />
-                <p>
-                  【カテゴリー】オリジナルサイト<br />
-                  【タイトル】Honny Bee Introduction<br />
-                  【スキル】HTML/CSS/jQuery/WordPress<br />
-                  【詳細】初心者用ギターのPRサイトです。
-                </p>
-              </a>
-            </div>
+
+            <?php $args = [
+              "post_type" => "works",
+              "post_status" => "publish"
+            ];
+            $works = new WP_Query($args);
+            while ($works->have_posts()) : $works->the_post();
+            ?>
+              <?php
+              $id = get_the_ID();
+              $link_url = get_permalink($id);
+              $thumbnail_url = wp_get_attachment_url(get_post_thumbnail_id($id));
+              $category = get_post_meta($id, "カテゴリー", true);
+              $title = get_post_meta($id, "タイトル", true);
+              $skill = get_post_meta($id, "スキル", true);
+              $detail = get_post_meta($id, "詳細", true);
+              ?>
+              <div class="works__item">
+                <a class="anchor-link" href="<?php echo $link_url ?>">
+                  <img src="<?php echo $thumbnail_url ?>" alt="">
+
+                  <p>
+                    【カテゴリー】<?php echo $category ?><br />
+                    【タイトル】<?php echo $title ?><br />
+                    【スキル】<?php echo $skill ?><br />
+                    【詳細】<?php echo wp_trim_words($detail, $num_words = 20, $more = "..."); ?>
+                  </p>
+                </a>
+              </div>
+            <?php endwhile; ?>
           </div>
         </div>
       </section>

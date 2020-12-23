@@ -25,7 +25,7 @@ function init_func()
     "has_archive" => false,
     "hierarchical" => false,
     "menu_position" => 5,
-    "menu_icon" => ""
+    "menu_icon" => "dashicons-welcome-widgets-menus"
   ]);
 }
 

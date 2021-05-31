@@ -2,18 +2,17 @@
 <html lang="ja">
 
 <head>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/contact.css" />
   <?php get_header(); ?>
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBG4M89" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <div class="door"></div>
 
-  <header class="header">
-    <div class="header__container">
-      <h1 class="header__icon">Portfolio</h1>
-    </div>
-  </header>
+  <?php get_template_part("components/header"); ?>
 
   <div class="wrapper">
 
@@ -24,12 +23,10 @@
     <?php endwhile ?>
   </div>
 
-  <footer>
-    <small>Copyright © 2020 SUGAI's Protfolio All Rights Reserved.</small>
-  </footer>
+  <?php get_template_part("components/footer"); ?>
 
   <?php get_footer(); ?>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/contact.js" type="module"></script>
+
 </body>
 
 </html>

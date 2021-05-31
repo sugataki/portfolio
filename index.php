@@ -2,11 +2,14 @@
 <html lang="ja">
 
 <head>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css" />
   <?php get_header(); ?>
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBG4M89" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <div class="door"></div>
 
   <div class="main-contents">
@@ -35,16 +38,30 @@
                 </li>
               </ul>
             </nav>
+            <div class="burger-btn">
+              <span class="bar"></span>
+            </div>
           </div>
         </div>
 
         <div id="about-me" class="wrapper about-me__wrapper">
-          <h2 class="about-me__title title">自己紹介</h2>
+          <div class="about-me__box">
+            <h2 class="about-me__title title">自己紹介</h2>
+            <div class="face-icon">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/profile.png" alt="">
+            </div>
+          </div>
+
           <div class="about-me__inner">
             <div class="about-me__introduction box">
               <h3>ご挨拶</h3>
+
+              <div class="detail">
+                <h4 class="my-name">須貝 多樹</h4>
+                <p>1993年11月生まれ 静岡県出身</p>
+              </div>
               <p>
-                初めまして。Webエンジニアの須貝と申します。<br />
+                初めまして。Webエンジニアの須貝 多樹と申します。<br />
                 現在フロントエンドを中心に、Webサイト制作を行っております。<br />
                 「高品質」かつ「迅速」なサイト作りを行っております。<br />
                 また、丁寧なコミュニケーションを心がけ、納品までの責任感を持ち、<br />
@@ -54,10 +71,9 @@
             <div class="about-me__background box">
               <h3>経歴</h3>
               <p>
-                高校卒業後、様々な業種を経験し、大手リゾート会社に入社<br />
-                そこで主にExcelを使ったマクロの開発を行う<br />
-                ITの知識に興味を持ち、仕事をしながらWeb制作の技術を取得<br />
-                現在、フロントエンドエンジニアとして活動中
+                高校卒業後、様々な業種を経験し、Excelのマクロ開発を行う<br />
+                そこでITの知識に興味を持ち、仕事をしながらWeb制作の技術を取得<br />
+                現在、フロントエンドエンジニアとして活動
               </p>
             </div>
           </div>
@@ -66,108 +82,109 @@
 
       <section id="skills" class="skills">
         <div class="wrapper skills__wrapper">
-          <p class="skills__title title">スキル</p>
-          <div class="skills__list">
-            <div class="skills__item">
-              <i class="fab fa-html5 html"></i>
-              <p class="skills__item-title">HTML</p>
-              <p class="skills__item-level">Level: ★★★★★</p>
-            </div>
-            <div class="skills__item">
-              <i class="fab fa-css3-alt css"></i>
-              <p class="skills__item-title">CSS</p>
-              <p class="skills__item-level">Level: ★★★★★</p>
-            </div>
-            <div class="skills__item">
-              <i class="fab fa-sass sass"></i>
-              <p class="skills__item-title">SASS</p>
-              <p class="skills__item-level">Level: ★★★★★</p>
-            </div>
-            <div class="skills__item">
-              <i class="fab fa-js-square js"></i>
-              <p class="skills__item-title">JavaScript</p>
-              <p class="skills__item-level">Level: ★★★★★</p>
-            </div>
-            <div class="skills__item">
-              <i class="fab fa-wordpress wordpress"></i>
-              <p class="skills__item-title">WordPress</p>
-              <p class="skills__item-level">Level: ★★★★★</p>
-            </div>
-            <div class="skills__item">
-              <i class="fab fa-php php"></i>
-              <p class="skills__item-title">PHP</p>
-              <p class="skills__item-level">Level: ★★★★☆</p>
-            </div>
-            <div class="skills__item">
-              <i class="fab fa-github github"></i>
-              <p class="skills__item-title">GitHub</p>
-              <p class="skills__item-level">Level: ★★★★★</p>
-            </div>
-          </div>
+          <h2 class="skills__title title">スキル</h2>
+          <ul class="skills__list">
+
+            <?php $args = [
+              "post_type" => "skills",
+              "post_status" => "publish",
+              "order" => "ASC"
+            ];
+            $skills = new WP_Query($args);
+            while ($skills->have_posts()) : $skills->the_post();
+            ?>
+
+              <?php
+              $id = get_the_ID();
+              $name = get_the_title();
+              $className = get_post_meta($id, "クラス名", true);
+              $colorCode = get_post_meta($id, "色コード", true);
+              $star = get_post_meta($id, "星", true);
+              $description = get_post_meta($id, "説明文", true);
+              ?>
+              <li class="skills__item">
+                <div class="skills__item-imageBox">
+                  <i class="fab <?php echo $className; ?>" style="color: <?php echo $colorCode; ?>"></i>
+                </div>
+
+                <div class="skills__item-textarea">
+                  <p class="skills__item-title"><?php echo $name; ?></p>
+                  <p class="skills__item-level">Level: <span class="star"><?php echo $star; ?></span></p>
+                  <p class="skills__item-description"><?php echo nl2br($description); ?></p>
+                </div>
+
+              </li>
+            <?php endwhile; ?>
+          </ul>
         </div>
       </section>
 
       <section id="service" class="service">
         <div class="wrapper">
           <p class="title service__title">サービス</p>
-          <div class="service__list">
-            <div class="service__item item1">
-              <div class="service__item-imgBox">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/service-img/coding.png" alt="" />
-              </div>
+          <ul class="service__list">
 
-              <div class="service__item-textBox">
-                <div class="service__item-popUpInner">
-                  <h2 class="service__item-title">コーディング</h2>
-                  <p class="service__item-description">
-                    LPやコーポレートサイト、ブログなど、 <br />
-                    目的に応じた適切なコーディングを行います(レスポンシブ対応可)。<br />
-                    また、軽微なコードの修正などにも対応しています。
-                  </p>
+            <?php $args = [
+              "post_type" => "service",
+              "post_status" => "publish",
+              "order" => "ASC"
+            ];
+            $service = new WP_Query($args);
+            while ($service->have_posts()) : $service->the_post();
+            ?>
+
+              <?php
+              $id = get_the_ID();
+              $name = get_the_title();
+              $image_url = wp_get_attachment_url(get_post_thumbnail_id($id));
+              $description = get_post_meta($id, "説明文", true);
+
+              if (get_post_meta($id, "料金表", true) != "") {
+                $price = get_post_meta($id, "料金表", true);
+              } else {
+                $price = "";
+              }
+
+              ?>
+
+              <li class="service__item item1">
+                <div class="service__item-imgBox">
+                  <img src="<?php echo $image_url; ?>" alt="" />
                 </div>
 
-                <p class="service__item-price">
-                  【料金目安】<br />
-                  コード修正: ¥10,000~/1p<br />
-                  LP制作: ¥20,000~/1p
-                </p>
-              </div>
-            </div>
+                <div class="service__item-textBox">
+                  <div class="service__item-popUpInner">
+                    <h2 class="service__item-title"><?php echo $name; ?></h2>
+                    <p class="service__item-description">
+                      <?php echo nl2br($description); ?>
+                    </p>
+                  </div>
 
-            <div class="service__item item2">
-              <div class="service__item-imgBox">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/service-img/wordpress.jpg" alt="" />
-              </div>
-              <div class="service__item-textBox">
-                <div class="service__item-popUpInner">
-                  <h2 class="service__item-title">WordPress</h2>
-                  <p class="service__item-description">
-                    コーポレートサイトや個人ブログ、およびウェブマガジンなどの<br />
-                    WordPressサイトの構築や既存サイトのWordPress移行、<br />
-                    コードの修正に対応しております。<br />
-                    また、軽微なコードの修正などにも対応しています。
+                  <p class="service__item-price">
+                    <span>【料金目安】</span><br>
+                    <?php echo nl2br($price); ?>
                   </p>
                 </div>
+              </li>
+            <?php endwhile; ?>
+          </ul>
 
-                <p class="service__item-price">
-                  【料金目安】<br />
-                  Wordpress移行: ¥100,000~<br />
-                  Wordpress制作: ¥200,000~
-                </p>
-              </div>
-            </div>
-          </div>
+          <p class="service__note">
+            ※料金に関しましては、出来る限りの努力を致しますので、<br>
+            まずはご一報いただけますと幸いです。
+          </p>
         </div>
       </section>
 
       <section id="works" class="works">
         <div class="wrapper">
           <p class="title works__title">作品</p>
-          <div class="works__list">
+          <ul class="works__list">
 
             <?php $args = [
               "post_type" => "works",
-              "post_status" => "publish"
+              "post_status" => "publish",
+              "order" => "ASC"
             ];
             $works = new WP_Query($args);
             while ($works->have_posts()) : $works->the_post();
@@ -181,7 +198,7 @@
               $skill = get_post_meta($id, "スキル", true);
               $detail = get_post_meta($id, "詳細", true);
               ?>
-              <div class="works__item">
+              <li class="works__item">
                 <a class="anchor-link" href="<?php echo $link_url ?>">
                   <img src="<?php echo $thumbnail_url ?>" alt="">
 
@@ -192,9 +209,9 @@
                     【詳細】<?php echo wp_trim_words($detail, $num_words = 20, $more = "..."); ?>
                   </p>
                 </a>
-              </div>
+              </li>
             <?php endwhile; ?>
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -205,14 +222,12 @@
         </div>
       </section>
 
-      <footer>
-        <small>Copyright © 2020 SUGAI's Protfolio All Rights Reserved.</small>
-      </footer>
+      <?php get_template_part("components/footer"); ?>
+
     </div>
   </div>
 
   <?php get_footer(); ?>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/main.js" type="module"></script>
 </body>
 
 </html>

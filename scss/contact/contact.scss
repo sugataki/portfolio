@@ -23,6 +23,11 @@ body {
   &__flex {
     display: flex;
     // justify-content: space-between;
+    margin-bottom: 20px;
+
+    @include tab {
+      flex-direction: column;
+    }
   }
 
   &__left {
@@ -89,5 +94,44 @@ body {
       background-color: #fff;
       color: $cGreen;
     }
+  }
+}
+
+.wpcf7-form {
+  .wpcf7-response-output {
+    font-size: 2rem;
+    border-radius: 4px;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+  &.send {
+    .wpcf7-response-output {
+      margin: 0px 0px 40px;
+      color: #3a87ad;
+      background-color: #d9edf7;
+      border: 1px solid #bce8f1;
+    }
+  }
+
+  &.invalid {
+    .wpcf7-response-output {
+      margin: 0px 0px 40px;
+      color: #b94a48;
+      background-color: #f2dede;
+      border: 1px solid #eed3d7;
+    }
+  }
+}
+
+.grecaptcha-badge {
+  margin-bottom: 40px;
+}
+
+.back-btn {
+  display: inline-block;
+  @include tab {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

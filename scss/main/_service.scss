@@ -1,30 +1,33 @@
 .service {
+  margin-bottom: 80px;
   &__title {
     text-align: center;
-  }
-
-  &__list {
-    .item1 {
-      margin-bottom: 80px;
-
-      img {
-        transform: translateY(-30px);
-      }
-    }
-
-    .item2 {
-      flex-direction: row-reverse;
-    }
   }
 
   &__item {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 80px;
+
+    &:nth-of-type(2n) {
+      flex-direction: row-reverse;
+    }
+    @include tab {
+      text-align: center;
+      flex-direction: column;
+      &:nth-of-type(2n) {
+        flex-direction: column;
+      }
+    }
 
     &-imgBox {
       width: 480px;
       height: 240px;
       overflow: hidden;
+
+      @include tab {
+        margin: 0 auto 40px;
+      }
 
       img {
         width: 100%;
@@ -44,5 +47,10 @@
     &-price {
       font-size: 1.6rem;
     }
+  }
+
+  &__note {
+    text-align: center;
+    font-size: 1.6rem;
   }
 }

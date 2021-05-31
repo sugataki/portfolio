@@ -1,7 +1,12 @@
 .works {
   background-color: $cWhite;
+  background-image: url("../img/bg-img/works.jpg");
+  background-size: cover;
+  background-position: center center;
   &__title {
+    color: $cWhite;
     text-align: center;
+    text-shadow: 1px 0 5px $cBlack;
   }
 
   &__list {
@@ -17,8 +22,22 @@
     overflow: hidden;
     position: relative;
 
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
+
+    @include tab {
+      width: 100%;
+    }
+
     img {
-      height: 100%;
+      width: 100%;
+      @include tab {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
 
     a {
@@ -30,6 +49,7 @@
 
     p {
       color: $cWhite;
+      text-shadow: 1px 0 5px $cBlack;
       font-size: 2rem;
       white-space: nowrap;
       width: 100%;

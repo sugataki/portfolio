@@ -28,7 +28,6 @@ body {
   color: $cBlack;
   line-height: 30px;
   opacity: 0;
-  // font-family: "Sawarabi Mincho", sans-serif;
   font-family: source-han-serif-japanese, serif;
   font-weight: 400;
 
@@ -43,6 +42,10 @@ section {
   width: 70%;
   margin: 0 auto;
   padding-top: 120px;
+
+  @include tab {
+    width: 90%;
+  }
 }
 
 .title {

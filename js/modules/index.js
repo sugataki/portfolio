@@ -1,4 +1,4 @@
-export const switchLoad = () => {
+const switchLoad = () => {
   const perfEntries = performance.getEntriesByType("navigation");
   perfEntries.forEach(function (pe) {
     const url = location.href;
@@ -15,7 +15,7 @@ export const switchLoad = () => {
   });
 };
 
-export const toLinkPageWithDoor = () => {
+const toLinkPageWithDoor = () => {
   $("a").on("click", function (event) {
     const classNameOfLink = $(this).attr("class");
 
@@ -33,7 +33,7 @@ export const toLinkPageWithDoor = () => {
   });
 };
 
-export const getParam = (name, url) => {
+const getParam = (name, url) => {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, "\\$&");
   var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -43,26 +43,25 @@ export const getParam = (name, url) => {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
 
-export const slideDoorToShowPage = () => {
+const slideDoorToShowPage = () => {
   const check = getParam("prev");
   check
-    ? $(".door").css({ right: 0 }).animate({ right: "-100%" }, 500)
+    ? $(".door").css({ right: 0 }).animate({ right: "-100%" }, 700)
     : $("body").css({ opacity: 1 });
 };
 
-export const scrollToPosition = (query) => {
+const scrollToPosition = (query) => {
   const headerHeight = $(".header").height();
   const position = $(query).offset().top - headerHeight;
-  console.log(headerHeight);
 
-  // if ($(".burger-btn").hasClass("close")) {
-  //   $(".burger-btn").toggleClass("close");
-  //   $(".header-nav").fadeToggle(500);
-  // }
+  if ($(".burger-btn").hasClass("close")) {
+    $(".burger-btn").toggleClass("close");
+    $(".header__nav").removeClass("show");
+  }
   $("html, body").animate({ scrollTop: position }, 800);
 };
 
-export class Animation {
+class Animation {
   constructor(query, type) {
     this.query = $(query);
     this.type = type;

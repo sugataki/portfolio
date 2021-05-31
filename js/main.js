@@ -1,11 +1,3 @@
-import {
-  switchLoad,
-  toLinkPageWithDoor,
-  slideDoorToShowPage,
-  scrollToPosition,
-  Animation,
-} from "./modules/index.js";
-
 $(function () {
   switchLoad();
   slideDoorToShowPage();
@@ -19,6 +11,8 @@ $(window).on("load", function () {
 
   const aboutMe = ".about-me";
   const aboutMeTitle = new Animation(`${aboutMe}__title`, "fadeIn");
+  const aboutMeFaceIcon = new Animation(`.face-icon`, "fadeIn");
+
   const aboutMeIntroduction = new Animation(
     `${aboutMe}__introduction`,
     "fadeIn"
@@ -28,9 +22,14 @@ $(window).on("load", function () {
   const skills = ".skills";
   const skillsTitle = new Animation(`${skills}__title`, "rotate");
 
-  const skillsItems = [];
-  $(`${skills}__item`).each(function (index, skillsItem) {
-    skillsItems.push(new Animation(skillsItem, "rotate"));
+  const skillsIcons = [];
+  $(`${skills}__item-imageBox`).each(function (index, skillsIcon) {
+    skillsIcons.push(new Animation(skillsIcon, "rotate"));
+  });
+
+  const skillsTextareas = [];
+  $(`${skills}__item-textarea`).each(function (index, skillsTextarea) {
+    skillsTextareas.push(new Animation(skillsTextarea, "fadeIn"));
   });
 
   const service = ".service";
@@ -55,8 +54,9 @@ $(window).on("load", function () {
     serviceItemPrices.push(new Animation(serviceItemPrice, "popUp"));
   });
 
-  const works = ".works";
+  const serviceNote = new Animation(`${service}__note`, "fadeIn");
 
+  const works = ".works";
   const worksTitle = new Animation(`${works}__title`, "blur");
 
   const worksItems = [];
@@ -73,6 +73,9 @@ $(window).on("load", function () {
     if (aboutMeTitle.hasOverTaken(top)) {
       aboutMeTitle.show();
     }
+    if (aboutMeFaceIcon.hasOverTaken(top)) {
+      aboutMeFaceIcon.show();
+    }
     if (aboutMeIntroduction.hasOverTaken(top)) aboutMeIntroduction.show(200);
     if (aboutMeBackground.hasOverTaken(top)) {
       aboutMeBackground.show();
@@ -80,8 +83,12 @@ $(window).on("load", function () {
 
     if (skillsTitle.hasOverTaken(top)) skillsTitle.show();
 
-    $.each(skillsItems, function (index, skillsItem) {
-      if (skillsItem.hasOverTaken(top)) skillsItem.show();
+    $.each(skillsIcons, function (index, skillsIcon) {
+      if (skillsIcon.hasOverTaken(top)) skillsIcon.show();
+    });
+
+    $.each(skillsTextareas, function (index, skillsTextarea) {
+      if (skillsTextarea.hasOverTaken(top)) skillsTextarea.show();
     });
 
     if (serviceTitle.hasOverTaken(top)) serviceTitle.show();
@@ -99,11 +106,22 @@ $(window).on("load", function () {
       if (serviceItemPrice.hasOverTaken(top)) serviceItemPrice.show();
     });
 
+    if (serviceNote.hasOverTaken(top)) serviceNote.show();
+
     if (worksTitle.hasOverTaken(top)) worksTitle.show();
 
     $.each(worksItems, function (index, worksItem) {
       if (worksItem.hasOverTaken(top)) worksItem.show();
     });
+  });
+
+  $(".burger-btn").click(() => {
+    const $headerNav = $(".header__nav");
+    $(".burger-btn").toggleClass("close");
+
+    $headerNav.hasClass("show")
+      ? $(".header__nav").removeClass("show")
+      : $(".header__nav").addClass("show");
   });
 
   $(".scroll-top").click(() => {

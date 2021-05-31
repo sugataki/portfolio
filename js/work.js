@@ -1,9 +1,3 @@
-import {
-  toLinkPageWithDoor,
-  switchLoad,
-  slideDoorToShowPage,
-} from "./modules/index.js";
-
 $(function () {
   switchLoad();
   slideDoorToShowPage();

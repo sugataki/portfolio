@@ -8,12 +8,39 @@
 body {
 }
 
+.wrapper {
+  @include tab {
+    width: 90%;
+  }
+}
+
+.flex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .img-box {
   margin-bottom: 40px;
+  overflow: hidden;
+  width: 1000px;
+  height: auto;
+  position: relative;
+
+  @include tab {
+    width: 100%;
+    height: 580px;
+  }
 
   img {
-    display: block;
-    margin: 0 auto;
+    height: 100%;
+    @include tab {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 
@@ -22,19 +49,22 @@ dl {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 3rem;
+  @include tab {
+    font-size: 2rem;
+  }
   dt {
     display: inline-block;
-    font-size: 3rem;
     margin-bottom: 20px;
   }
   dd {
     display: inline-block;
-    font-size: 3rem;
   }
 }
 
 .detail-text {
   text-align-last: left;
+  line-height: 40px;
 }
 
 .custom_field {

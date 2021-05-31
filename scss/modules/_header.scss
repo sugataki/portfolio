@@ -11,6 +11,11 @@
     top: -80px;
     left: 0;
     transition: 0.5s;
+
+    @include tab {
+      position: fixed;
+      top: 0;
+    }
   }
 
   &.fixed {
@@ -32,13 +37,46 @@
   }
 
   &__nav {
+    @include tab {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: -100vw;
+      z-index: 2;
+      background-color: rgba($cBlack, 0.8);
+      opacity: 0.9;
+      transition: 0.5s;
+
+      &.show {
+        right: 0;
+      }
+    }
+
     ul {
       display: flex;
       justify-content: space-between;
+      @include tab {
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
     li {
       font-size: 1.8rem;
       margin-right: 20px;
+      @include tab {
+        color: $cWhite;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 1px 0 5px $cBlack;
+      }
 
       &:last-child {
         margin-right: 0;
@@ -50,9 +88,81 @@
         font-size: 1.4rem;
         border-radius: 2rem;
         background-color: $cWhite;
+        @include tab {
+          text-shadow: none;
+          font-size: 2rem;
+        }
 
         i {
           margin-right: 4px;
+        }
+      }
+    }
+  }
+}
+
+.burger-btn {
+  display: none;
+
+  @include tab {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 3;
+    border: none;
+  }
+
+  .bar {
+    @include tab {
+      width: 30px;
+      height: 2px;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+    }
+
+    &::before {
+      @include tab {
+        content: "";
+        display: block;
+        height: 100%;
+        background-color: white;
+        transform: translateY(-10px);
+        transition: transform 0.3s;
+      }
+    }
+
+    &::after {
+      @include tab {
+        content: "";
+        display: block;
+        height: 100%;
+        background-color: white;
+        transform: translateY(10px);
+        transition: transform 0.3s;
+      }
+    }
+  }
+  &.close {
+    .bar {
+      @include tab {
+        background-color: rgba(white, 0);
+      }
+
+      &::before {
+        @include tab {
+          opacity: 1;
+          transform: rotate(45deg);
+        }
+      }
+
+      &::after {
+        @include tab {
+          transform: rotate(-45deg);
         }
       }
     }

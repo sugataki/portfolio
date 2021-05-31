@@ -5,16 +5,51 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+
+    @include tab {
+      flex-direction: column;
+    }
+  }
+
+  &__box {
+    .face-icon {
+      height: 300px;
+      width: 300px;
+      @include tab {
+        margin: 0 auto 60px;
+      }
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  &__title {
+    @include tab {
+      text-align: center;
+    }
   }
 
   &__inner {
     h3 {
       font-size: 4rem;
       margin-bottom: 40px;
+      @include tab {
+        text-align: center;
+      }
+    }
+
+    .my-name {
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 2rem;
+    }
+    & .detail {
+      margin-bottom: 20px;
     }
   }
 
